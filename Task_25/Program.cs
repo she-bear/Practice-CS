@@ -10,6 +10,9 @@ Console.WriteLine($"{number_A} в степени {number_B} (цикл) -> {GetDe
 Console.WriteLine($"{number_A} в степени {number_B} (pow) -> {GetDegreePow (number_A, number_B)}");
 
 int GetDegreeCycle (int number_A, int number_B) {
+    if (number_B == 0)
+        return 1;
+
     int result = number_A;
     for (int i = 1; i < number_B; i++)
     {
