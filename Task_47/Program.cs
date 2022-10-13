@@ -34,10 +34,10 @@ double[,] GetFloatRandomArray(int m, int n, int minValue, int maxValue)
     {
         for (int j = 0; j < n; j++)
         {
-            //result[i, j] = Convert.ToDouble(new Random().Next(minValue, maxValue + 1)/10.0);
-            Random random = new Random();
+            // Random random = new Random();
             
-            result[i, j] = random.NextDouble() * (maxValue - minValue) + minValue;
+            // result[i, j] = random.NextDouble() * (maxValue - minValue) + minValue;
+            result[i, j] = new Random().NextDouble()*(maxValue-minValue);
         }    
     }
 
