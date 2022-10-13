@@ -26,7 +26,19 @@ int res = GetItemPosition(matrix, row, col);
 
 if (res == -1)
     WriteLine($"Такого числа в массиве нет");
-else WriteLine($"{res}");   
+else WriteLine($"{res}");  
+
+// если нужно найти конкретный элемент
+Write("Введите значение элемента: ");
+int element=int.Parse(ReadLine());
+if(FindElement(matrix,element))
+{
+    WriteLine("Элемент найден");
+}
+else
+{
+    WriteLine("Элемент не найден");
+}
 
 
 int GetItemPosition (int [,] inArray, int m, int n)
@@ -62,4 +74,16 @@ void PrintArray(int[,] matr)
 
         Console.WriteLine();
     }
+}
+
+bool FindElement(int[,] array, int el)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j]==el) return true;
+        }
+    }
+    return false;
 }
